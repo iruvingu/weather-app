@@ -4,7 +4,7 @@ import propTypes from 'prop-types'
 
 import {
     CLOUD, CLOUDY, SUNNY, RAIN, SNOW, WINDY, FOG
-} from '../constants/weather'
+} from '../../constants/weather'
 
 const icons = {
     [SUNNY]: "day-sunny",
