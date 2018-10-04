@@ -5,10 +5,16 @@ import WeatherTemperature from './WeatherTemperature'
 import {
     CLOUD, CLOUDY, SUNNY, RAIN, SNOW, WINDY, FOG
 } from '../../constants/weather'
-import './style.css'
+
+// import styled, { css } from 'styled-components'
+
+// const Section = styled.section`
+//     color: white
+//     background: cornflowerblue
+// `
 
 const WeatherData = () => (
-    <div className="weatherDataCont">
+    <div>
         <WeatherTemperature
             temperature={25}
             weatherState={CLOUDY}

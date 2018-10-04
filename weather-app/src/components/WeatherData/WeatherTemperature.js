@@ -6,6 +6,8 @@ import {
     CLOUD, CLOUDY, SUNNY, RAIN, SNOW, WINDY, FOG
 } from '../../constants/weather'
 
+import Section from './styles'
+
 const icons = {
     [SUNNY]: "day-sunny",
     [FOG]: "day-fog",
@@ -26,14 +28,16 @@ const getWeatherIcon = weatherState => {
 
 const WeatherTemperature = ({ temperature, weatherState }) => {
     return (
-        <div>
-            {
-                getWeatherIcon(weatherState)
-            }
-            <span>
-                {`${temperature}°`}
-            </span>
-        </div>
+        <Section weatherTemperature>
+            <div>
+                {
+                    getWeatherIcon(weatherState)
+                }
+                <span>
+                    {`${temperature}°`}
+                </span>
+            </div>
+        </Section>
     )
 }
 
