@@ -1,18 +1,16 @@
 import React from 'react'
 import propTypes from 'prop-types'
 
-import { StyleWeatherExtraInfo } from './styles2'
+import { StyleWeatherExtraInfo, StyleExtraInfoText } from './styles2'
 
 const WeatherExtraInfo = ({ humidity, wind }) => {
     return (
             <StyleWeatherExtraInfo>
-                <span>{`Humedad: ${humidity} %`}</span>
-                <span>{`Viento: ${wind} m/s`}</span>
+                <StyleExtraInfoText>{`Humedad: ${humidity} %`}</StyleExtraInfoText>
+                <StyleExtraInfoText>{`Viento: ${wind} m/s`}</StyleExtraInfoText>
             </StyleWeatherExtraInfo>
     )
 }
-
-// https://www.styled-components.com/docs/api#primary
 
 WeatherExtraInfo.propTypes = {
     humidity: propTypes.number,
