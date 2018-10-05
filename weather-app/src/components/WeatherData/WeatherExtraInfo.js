@@ -6,8 +6,8 @@ import { StyleWeatherExtraInfo, StyleExtraInfoText } from './styles2'
 const WeatherExtraInfo = ({ humidity, wind }) => {
     return (
             <StyleWeatherExtraInfo>
-                <StyleExtraInfoText>{`Humedad: ${humidity} %`}</StyleExtraInfoText>
-                <StyleExtraInfoText>{`Viento: ${wind} m/s`}</StyleExtraInfoText>
+                <StyleExtraInfoText>{`湿度: ${humidity} %`}</StyleExtraInfoText>
+                <StyleExtraInfoText>{`風: ${wind} m/s`}</StyleExtraInfoText>
             </StyleWeatherExtraInfo>
     )
 }
