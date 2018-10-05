@@ -6,21 +6,18 @@ import {
     CLOUD, CLOUDY, SUNNY, RAIN, SNOW, WINDY, FOG
 } from '../../constants/weather'
 
-// import styled, { css } from 'styled-components'
-
-// const Section = styled.section`
-//     color: white
-//     background: cornflowerblue
-// `
+import { StyleWeatherDataIndex } from './styles2'
 
 const WeatherData = () => (
-    <div>
-        <WeatherTemperature
-            temperature={25}
-            weatherState={CLOUDY}
-        />
-        <WeatherExtraInfo humidity={80} wind={"10 m/s"} />
-    </div>
+    <StyleWeatherDataIndex>
+            <WeatherTemperature
+                temperature={25}
+                weatherState={CLOUDY}
+            />
+            <WeatherExtraInfo
+                humidity={80}
+                wind={10} />
+    </StyleWeatherDataIndex>
 )
 
 export default WeatherData

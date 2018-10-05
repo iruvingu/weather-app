@@ -19,14 +19,28 @@ const Button = styled.button`
           color: white;
         `};
 `
+const Input = styled.input.attrs({
+    type: 'text',
+    size: props => (props.small ? 5 : undefined),
+  })`
+    border-radius: 3px;
+    border: 1px solid palevioletred;
+    display: block;
+    margin: 0 0 1em;
+    padding: ${props => props.padding};
+  
+    ::placeholder {
+      color: palevioletred;
+    }
+  `
+  
 
 const WeatherLocation = () => {
     return (
         <div>
-        <Location city={"Mexico City"}></Location>
-        <WeatherData></WeatherData>
-        <Button primary>I'm a styled button</Button>
-    </div>
+            <Location city={"Mexico City"}></Location>
+            <WeatherData></WeatherData>
+        </div>
     )
 }
 

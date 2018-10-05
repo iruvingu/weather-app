@@ -6,7 +6,7 @@ import {
     CLOUD, CLOUDY, SUNNY, RAIN, SNOW, WINDY, FOG
 } from '../../constants/weather'
 
-import Section from './styles'
+import { StyleWeatherTemperature } from './styles2'
 
 const icons = {
     [SUNNY]: "day-sunny",
@@ -20,24 +20,23 @@ const icons = {
 
 const getWeatherIcon = weatherState => {
     const icon = icons[weatherState]
+
+    const sizeIcon = "2x"
+
     if (icon)
-        return <WeatherIcons name={icon} size="2x" />
+        return <WeatherIcons className="wicon" name={icon} size={sizeIcon} />
     else
-        return <WeatherIcons name={icons.cloud} size="2x" />
+        return <WeatherIcons className="wicon" name={icons.cloud} size={sizeIcon} />
 }
 
 const WeatherTemperature = ({ temperature, weatherState }) => {
     return (
-        <Section weatherTemperature>
+        <StyleWeatherTemperature>
             <div>
-                {
-                    getWeatherIcon(weatherState)
-                }
-                <span>
-                    {`${temperature}°`}
-                </span>
+                <span>{getWeatherIcon(weatherState)}</span>
+                <span>{`${temperature}°`}</span>
             </div>
-        </Section>
+        </StyleWeatherTemperature>
     )
 }
 

@@ -1,23 +1,38 @@
 import styled, { css } from 'styled-components'
 
-export default styled.section`
+export default styled.div`
     color: white
-    background: cornflowerblue
+    background: gray
+    width: 400px
+    height: 100px
+    line-height: 100px
 
     ${props =>
         props.weatherExtraInfo &&
         css`
             background: palevioletred;
-            color: white;
-            width: 60%
+            width: 50%
             display: inline-block
         `};
+
+    ${props =>
+        props.extraInfoText &&
+        css`
+            display: block;
+            color: blue
+            font-size: 16px
+            font-weight: bold
+        `};
+    
     ${props =>
         props.weatherTemperature &&
         css`
-            background: red;
+            font-size: 30px
+            font-weight: bold
+            background: cornflowerblue;
             color: white;
-            width: 40%
+            width: 50%
             display: inline-block
         `};
 `
+

@@ -1,18 +1,18 @@
 import React from 'react'
 import propTypes from 'prop-types'
 
-import Section from './styles'
+import { StyleWeatherExtraInfo } from './styles2'
 
 const WeatherExtraInfo = ({ humidity, wind }) => {
     return (
-        <Section weatherExtraInfo>
-            <div>
-                <span>{`${humidity} % - `}</span>
-                <span>{`${wind} viento`}</span>
-            </div>
-        </Section>
+            <StyleWeatherExtraInfo>
+                <span>{`Humedad: ${humidity} %`}</span>
+                <span>{`Viento: ${wind} m/s`}</span>
+            </StyleWeatherExtraInfo>
     )
 }
+
+// https://www.styled-components.com/docs/api#primary
 
 WeatherExtraInfo.propTypes = {
     humidity: propTypes.number,
