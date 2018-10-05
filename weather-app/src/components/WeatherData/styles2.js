@@ -6,7 +6,6 @@ export const StyleWeatherDataIndex = styled.div`
     height: 100px
     line-height: 100px
     border-radius: 5px
-    margin: 15px
 `
 export const StyleWeatherExtraInfo = styled.div`
     width: 40%

@@ -1,12 +1,13 @@
 import React from 'react'
 import propTypes from 'prop-types'
+import { StyleLocation } from './styles'
 
 const Location = ({ city }) => {
     return ( 
         <div>
-            <h1>
+            <StyleLocation h1>
                 {city}
-            </h1>
+            </StyleLocation>
         </div>
     )
 }
