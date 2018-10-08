@@ -1,25 +1,14 @@
 import React, { Component } from 'react'
+import CircularProgress from '@material-ui/core/CircularProgress'
+/**
+ * Components
+ */
 import Location from './Location';
 import WeatherData from '../WeatherData';
-import { StyleWeatherLocation, ActulizarButton } from './styles'
+import { StyleWeatherLocation } from './styles'
+import transformWeather from '../../services/transformWeather'
 
-import {
-    CLOUD, CLOUDY, SUNNY, RAIN, SNOW, WINDY, FOG
-} from '../../constants/weather'
-
-const data = {
-    temperature: 25,
-    weatherState: SUNNY,
-    humidity: 30,
-    wind: 10
-}
-
-const data2 = {
-    temperature: 30,
-    weatherState: RAIN,
-    humidity: 50,
-    wind: 5
-}
+import { API_WEATHER } from '../../constants/apiWeather'
 
 class WeatherLocation extends Component {
 
@@ -30,26 +19,45 @@ class WeatherLocation extends Component {
         // ayuda a que el componente se renderize
         this.state = {
             city: '東京',
-            data: data
+            data: null
         }
+        console.log('Constructor')
+    }
+
+    componentDidMount() {
+        console.log('componentDidMount')
+        this.handleUpdateClick()
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log('componentDidUpdate')
     }
 
     handleUpdateClick = () => {
-        console.log('Actualized')
-        this.setState({
-            city: '横浜',
-            data: data2
-        })
+        fetch(API_WEATHER)
+            .then(response => { return response.json()})
+            .then(myJson => { 
+                console.log(myJson)
+                const newWeather = transformWeather(myJson)
 
+                this.setState({
+                    city: '東京',
+                    data: newWeather
+                })
+            })
+        console.log('Actualized')
     }
 
     render() {
+        console.log('render')
         const { city, data } = this.state
         return (
             <StyleWeatherLocation>
                 <Location city={city}></Location>
-                <WeatherData data={data}></WeatherData>
-                <ActulizarButton onClick={this.handleUpdateClick}>Actualize</ActulizarButton>
+                {data 
+                    ? <WeatherData data={data}></WeatherData>
+                    : <CircularProgress color="secondary" size={50}/>
+                }
             </StyleWeatherLocation>
         )
     }
