@@ -1,7 +1,7 @@
 import convert  from 'convert-units'
 
 import {
-    CLOUD, CLOUDY, SUNNY, RAIN, SNOW, WINDY, FOG
+    CLOUD, CLOUDY, SUNNY, RAIN, SNOW, WINDY, FOG, THUNDERSTORM, DRIZZLE
 } from '../constants/weather'
 
 const getTemp = kelvin => {
@@ -9,18 +9,16 @@ const getTemp = kelvin => {
     }
 
 const getWeatherState = weatherState => {
-        const { description } = weatherState.weather[0]
-        console.log(description)
-        if (description === 'clear sky') return SUNNY
-        if (description === 'few clouds') return CLOUD
-        if (description === 'scattered clouds') return CLOUDY
-        if (description === 'broken clouds') return CLOUDY
-        if (description === 'rain') return RAIN
-        if (description === 'shower rain') return RAIN
-        if (description === 'snow') return SNOW
-        if (description === 'mist') return WINDY
-        if (description === 'haze') return WINDY
-        else return FOG
+        const { id } = weatherState.weather[0]
+        if (id < 300) return THUNDERSTORM
+        else if (id < 400) return DRIZZLE
+        else if (id < 600) return RAIN
+        else if (id < 700) return SNOW
+        else if (id < 741) return WINDY
+        else if (id < 800) return FOG
+        else if (id === 800) return SUNNY
+        else if (id < 803) return CLOUD
+        else return CLOUDY
         // return CLOUDY
     }
 

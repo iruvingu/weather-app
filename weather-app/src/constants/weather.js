@@ -11,3 +11,7 @@ export const SNOW = "snow"
 export const WINDY = "windy"
 
 export const FOG = "fog"
+
+export const THUNDERSTORM = "thunderstorm"
+
+export const DRIZZLE = "sprinkle"
