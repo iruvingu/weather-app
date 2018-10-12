@@ -32,12 +32,18 @@ class App extends Component {
 
   render() {
     return (
-      <Flex column>
-        <Border p={1}>1/3</Border>
-        <Box p={1} style={{background: 'blue'}}>1/3</Box>
-        <Box p={1} style={{background: 'green'}}>1/3</Box>
-      
-      </Flex>
+      <div style={{ height: '100vh' }}>      
+        <Flex
+        column
+        justify='space-between'
+        style={{ height: '100vh' }}
+        >
+          <Border p={1}>1/3</Border>
+          <Box p={1} style={{background: 'blue'}}>1/3</Box>
+          <Box p={1} style={{background: 'green'}}>1/3</Box>
+        
+        </Flex>
+      </div>
       // <div className="App">
       //   <LocationList cities={cities}
       //     onSelectedLocation={this.handleSelectedLocation} />
