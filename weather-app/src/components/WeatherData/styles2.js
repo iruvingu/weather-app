@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 export const StyleWeatherDataIndex = styled.div`
     background-color: silver
-    width: 400px
-    height: 100px
+    width: 100%
+    height: auto
     line-height: 100px
     border-radius: 5px
 `
@@ -20,7 +20,7 @@ export const StyleWeatherTemperature = styled.div`
 `
 
 export const StyleTemperature = styled.span`
-    font-size: 30px
+    font-size: 25px
     font-weight: bold
     padding-left: 20px
     color

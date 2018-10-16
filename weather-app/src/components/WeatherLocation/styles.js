@@ -11,7 +11,7 @@ export const StyleLocation = styled.h1`
 `
 
 export const StyleWeatherLocation = styled.div`
-    width: 400px
+    width: auto
     padding: 15px
     font-family: 'Roboto', sans-serif
     box-shadow: 10px 10px 40px -12px rgba(0, 0, 0, 0.75) 

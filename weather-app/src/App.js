@@ -4,8 +4,6 @@ import { Flex, Box } from 'reflexbox'
 import LocationList from './components/LocationList';
 import Fill from './reflexbox/Fill'
 import Text from './reflexbox/Text'
-import Btn from './reflexbox/Btn'
-import Pre from './reflexbox/Pre'
 
 const cities = [
   "Tokyo,jp",
@@ -23,62 +21,30 @@ class App extends Component {
 
   render() {
     return (
-      <Flex align='center' justify='center' style={{height: '100vh'}}>
-        <Box>
+      <Flex column m={1}  >
+        <Text my={0} f={2} children='Weather App' align='center'></Text>
+        <Flex wrap justify='center'>
           <Box
-            mt={4}
-            style={{
-              textTransform: 'uppercase',
-              letterSpacing: '.3em',
-              boxShadow: '0 0 0 3px'
-            }}>
-            <Flex>
-              <Fill p={2}
-                color='white'>
-                <h1 style={{ margin: 0 }}>Reflex</h1>
-              </Fill>
-              <Box p={2}>
-                <h1 style={{ margin: 0 }}>Box</h1>
-              </Box>
-            </Flex>
+          w={[ 1, 1/2, 1/4 ]}
+          p={[ 1, 2, 3 ]}
+          m={[ 1, 2, 3 ]}
+          style={{
+            boxShadow: '10px 10px 5px 0px rgba(0,0,0,0.75)',
+            background: '#cf6044'}}>
+            <div className="App">
+              <LocationList cities={cities}
+                onSelectedLocation={this.handleSelectedLocation} />
+            </div>
           </Box>
-          <Box my={2}>
-            <Text f={3}
-              children='Responsive React Flexbox Grid System'
-            />
+          <Box
+          w={[ 1, 1/2, 1/4 ]}
+          p={[ 1, 2, 3 ]}
+          m={[ 1, 2, 3 ]}
+          style={{boxShadow: '10px 10px 5px 0px rgba(0,0,0,0.75)'}}>
+            Campo
           </Box>
-          <Text my={1} f={3} children='Second children'></Text>
-          <Flex mb={4} align='center'>
-            <Btn
-              href='https://github.com/jxnblk/reflexbox'
-              children='GitHub'
-              style={{
-                color: '#fff',
-                backgroundColor: 'rgba(0, 0, 0, .75)',
-                borderRadius: '8px',
-                mixBlendMode: 'multiply'
-              }}
-            />
-            <Box ml='auto' />
-            <Pre children='npm i reflexbox' />
-          </Flex>
-        </Box>
+        </Flex>
       </Flex>
-      // <div style={{ height: '100vh' }}>      
-      //   <Flex
-      //   justify='space-around'
-      //   style={{ height: '100vh' }}
-      //   >
-      //     <Box p={4}>1/3</Box>
-      //     <Box p={4} style={{background: 'green'}}>1/3</Box>
-      //     <Box p={4} style={{background: 'blue'}}>1/3</Box>
-        
-      //   </Flex>
-      // </div>
-      // <div className="App">
-      //   <LocationList cities={cities}
-      //     onSelectedLocation={this.handleSelectedLocation} />
-      // </div>
     )
   }
 }
