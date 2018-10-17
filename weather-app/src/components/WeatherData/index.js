@@ -9,20 +9,24 @@ import { StyleWeatherDataIndex } from './styles2'
 const WeatherData = ({ data: { temperature, weatherState, humidity, wind } }) => {
     // const { temperature, weatherState, humidity, wind } = data
     return (
-        <Flex>
-            <Box
-            align='center'>
-                <StyleWeatherDataIndex>
-                    <WeatherTemperature
-                        temperature={temperature}
-                        weatherState={weatherState}
-                    />
+        <StyleWeatherDataIndex>
+            <Flex
+                align='center'>
+                <Box w={1/2}>
+                <WeatherTemperature
+                    temperature={temperature}
+                    weatherState={weatherState}
+                />
+                </Box>
+                <Box 
+                    w={1/2}
+                    justify='center'>
                     <WeatherExtraInfo
-                        humidity={humidity}
-                        wind={wind} />
-                </StyleWeatherDataIndex>
-            </Box>
-        </Flex>
+                    humidity={humidity}
+                    wind={wind} />
+                </Box>
+            </Flex>
+        </StyleWeatherDataIndex>
     )
 }
 

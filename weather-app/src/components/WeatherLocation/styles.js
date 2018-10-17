@@ -13,8 +13,9 @@ export const StyleLocation = styled.h1`
 export const StyleWeatherLocation = styled.div`
     width: auto
     padding: 15px
-    font-family: 'Roboto', sans-serif
-    box-shadow: 10px 10px 40px -12px rgba(0, 0, 0, 0.75) 
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 10px 10px 40px -12px rgba(0, 0, 0, 0.75);
+    border-radius: 5px
 `
 
 export const ActulizarButton = styled.button`

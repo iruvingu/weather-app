@@ -4,18 +4,17 @@ export const StyleWeatherDataIndex = styled.div`
     background-color: silver
     width: 100%
     height: auto
-    line-height: 100px
     border-radius: 5px
 `
 export const StyleWeatherExtraInfo = styled.div`
-    width: 40%
+    width: 100%
     display: inline-block
     line-height: 28px
     text-align: left
 `
 
 export const StyleWeatherTemperature = styled.div`
-    width: 60%
+    width: 100%
     display: inline-block
 `
 

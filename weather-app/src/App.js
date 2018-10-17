@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
+import Paper from '@material-ui/core/Paper'
+import AppBar from '@material-ui/core/AppBar'
+import Typography from '@material-ui/core/Typography'
+import ToolBar from '@material-ui/core/Toolbar'
 import { Flex, Box } from 'reflexbox'
 import LocationList from './components/LocationList';
 import Fill from './reflexbox/Fill'
@@ -22,7 +26,15 @@ class App extends Component {
   render() {
     return (
       <Flex column m={1}  >
-        <Text my={0} f={2} children='Weather App' align='center'></Text>
+        <Box m={1}>
+          <AppBar>
+            <ToolBar>
+              <Typography variant='title' color='inherit'>
+                Weather App
+              </Typography>
+            </ToolBar>
+          </AppBar>
+        </Box>
         <Flex wrap justify='center'>
           <Box
           w={[ 1, 1/2, 1/4 ]}
@@ -30,7 +42,8 @@ class App extends Component {
           m={[ 1, 2, 3 ]}
           style={{
             boxShadow: '10px 10px 5px 0px rgba(0,0,0,0.75)',
-            background: '#cf6044'}}>
+            background: '#cf6044',
+            borderRadius: '5px'}}>
             <div className="App">
               <LocationList cities={cities}
                 onSelectedLocation={this.handleSelectedLocation} />
@@ -40,8 +53,10 @@ class App extends Component {
           w={[ 1, 1/2, 1/4 ]}
           p={[ 1, 2, 3 ]}
           m={[ 1, 2, 3 ]}
-          style={{boxShadow: '10px 10px 5px 0px rgba(0,0,0,0.75)'}}>
-            Campo
+          style={{boxShadow: '10px 10px 5px 0px rgba(0,0,0,0.75)', borderRadius: '5px'}}>
+            <Paper elevation={4}>
+              Campo
+            </Paper>
           </Box>
         </Flex>
       </Flex>
