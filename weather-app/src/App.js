@@ -6,8 +6,6 @@ import Typography from '@material-ui/core/Typography'
 import ToolBar from '@material-ui/core/Toolbar'
 import { Flex, Box } from 'reflexbox'
 import LocationList from './components/LocationList';
-import Fill from './reflexbox/Fill'
-import Text from './reflexbox/Text'
 
 const cities = [
   "Tokyo,jp",
@@ -20,14 +18,14 @@ const cities = [
 class App extends Component {
 
   handleSelectedLocation = city => {
-    console.log('handleSelectedLocation')
+    console.log('handleSelectedLocation ' + city)
   }
 
   render() {
     return (
-      <Flex column m={1}  >
-        <Box m={1}>
-          <AppBar>
+      <Flex column m={0}  >
+        <Box m={0}>
+          <AppBar position='relative'>
             <ToolBar>
               <Typography variant='title' color='inherit'>
                 Weather App

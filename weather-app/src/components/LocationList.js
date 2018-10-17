@@ -1,6 +1,7 @@
 import React from 'react'
 import WeatherLocation from './WeatherLocation'
 import propTypes from 'prop-types'
+import { Content } from './StylesLocationList'
 
 const LocationList = ({ cities, onSelectedLocation }) => {
 
@@ -18,9 +19,9 @@ const LocationList = ({ cities, onSelectedLocation }) => {
     }
 
     return (
-        <div>
-        {mapCities(cities)}
-        </div>
+        <Content>
+            {mapCities(cities)}
+        </Content>
     )
 }
 
