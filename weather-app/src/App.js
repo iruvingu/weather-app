@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography'
 import ToolBar from '@material-ui/core/Toolbar'
 import { Flex, Box } from 'reflexbox'
 import LocationList from './components/LocationList';
+import ForecastExtended from './components/ForecastExtended'
 
 const cities = [
   "Tokyo,jp",
@@ -16,12 +17,18 @@ const cities = [
 ]
 
 class App extends Component {
+  constructor(){
+    super()
+    this.state = { city: "Eligir Ciudad" }
+  }
 
   handleSelectedLocation = city => {
-    console.log('handleSelectedLocation ' + city)
+    this.setState({ city })
+    console.log('handleSelectedLocation ' + city);
   }
 
   render() {
+    const { city } = this.state
     return (
       <Flex column m={0}  >
         <Box m={0}>
@@ -53,7 +60,7 @@ class App extends Component {
           m={[ 1, 2, 3 ]}
           style={{boxShadow: '10px 10px 5px 0px rgba(0,0,0,0.75)', borderRadius: '5px'}}>
             <Paper elevation={4}>
-              Campo
+              <ForecastExtended city={city}></ForecastExtended>
             </Paper>
           </Box>
         </Flex>
