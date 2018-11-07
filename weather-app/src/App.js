@@ -19,7 +19,7 @@ const cities = [
 class App extends Component {
   constructor(){
     super()
-    this.state = { city: "Eligir Ciudad" }
+    this.state = { city: null }
   }
 
   handleSelectedLocation = city => {
@@ -60,7 +60,10 @@ class App extends Component {
           m={[ 1, 2, 3 ]}
           style={{boxShadow: '10px 10px 5px 0px rgba(0,0,0,0.75)', borderRadius: '5px'}}>
             <Paper elevation={4}>
-              <ForecastExtended city={city}></ForecastExtended>
+              {!city
+                ? <h1>No se ha seleccionado ciudad</h1>
+                : <ForecastExtended city={city}></ForecastExtended>
+              }
             </Paper>
           </Box>
         </Flex>
