@@ -6,6 +6,7 @@ export const Content = styled.div`
     background: Tan;
     max-height: 30vh;
     overflow: auto;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    cursor: pointer;
   }
 `;

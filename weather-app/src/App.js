@@ -58,7 +58,7 @@ class App extends Component {
           w={[ 1, 1/2, 1/4 ]}
           p={[ 1, 2, 3 ]}
           m={[ 1, 2, 3 ]}
-          style={{boxShadow: '10px 10px 5px 0px rgba(0,0,0,0.75)', borderRadius: '5px'}}>
+          style={{boxShadow: '10px 10px 5px 0px rgba(0,0,0,0.75)', borderRadius: '5px', height: '100vh', overflow: 'auto'}}>
             <Paper elevation={4}>
               {!city
                 ? <h1>No se ha seleccionado ciudad</h1>

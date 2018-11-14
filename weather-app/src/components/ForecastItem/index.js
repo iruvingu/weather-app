@@ -1,12 +1,22 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import WeatherData from '../WeatherData'
+import { Flex, Box } from 'reflexbox'
 
 const Forecast = ({ weekDay, hour, data }) => {
   return (
-    <div>
-      <div>{weekDay} Hora:{hour} hrs</div>
-      <WeatherData data={data}/>
+    <div
+    style={{width: '100%'}}>
+      <Flex
+      column
+      my={1}>
+        <Box>
+          <div>{weekDay} Hora:{hour} hrs</div>
+        </Box>
+        <Box>
+          <WeatherData data={data}/>
+        </Box>
+      </Flex>
     </div>
     
   )
