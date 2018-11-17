@@ -6,21 +6,6 @@ import { Flex, Box } from 'reflexbox'
 import getUrlForecastByCity from '../services/getUrlForecastByCity'
 import transformForecast from '../services/transformForecast'
 
-// const days = [
-//     'Monday',
-//     'Tuesday',
-//     'Wednesday',
-//     'Thursday',
-//     'Friday'
-// ]
-
-// const data = {
-//     temperature: 10,
-//     humidity: 10,
-//     weatherState: 'normal',
-//     wind: 10
-//   }
-
 class ForecastExtended extends Component{
     constructor(){
         super()
@@ -30,7 +15,18 @@ class ForecastExtended extends Component{
     }
 
     componentDidMount(){
-        const API_FORECAST_URL = getUrlForecastByCity(this.props.city)
+        this.updateCity(this.props.city)
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.city !== prevProps.city) {
+            this.setState({ forecastData: null })
+            this.updateCity(this.props.city)
+        }
+    }
+
+    updateCity = city => {
+        const API_FORECAST_URL = getUrlForecastByCity(city)
         fetch(API_FORECAST_URL)
             .then(response => {
                 return response.json()
