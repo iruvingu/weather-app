@@ -7,6 +7,5 @@ export const Content = styled.div`
     max-height: 30vh;
     overflow: auto;
     margin-bottom: 20px;
-    cursor: pointer;
   }
 `;

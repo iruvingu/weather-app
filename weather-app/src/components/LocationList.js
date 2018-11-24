@@ -19,7 +19,7 @@ const LocationList = ({ cities, onSelectedLocation }) => {
     }
 
     return (
-        <Content>
+        <Content style={{cursor: 'pointer'}}>
             {mapCities(cities)}
         </Content>
     )

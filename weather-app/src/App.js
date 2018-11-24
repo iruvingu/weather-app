@@ -5,8 +5,8 @@ import AppBar from '@material-ui/core/AppBar'
 import Typography from '@material-ui/core/Typography'
 import ToolBar from '@material-ui/core/Toolbar'
 import { Flex, Box } from 'reflexbox'
-import LocationList from './components/LocationList';
-import ForecastExtended from './components/ForecastExtended'
+import LocationListContainer from './containers/LocationListContainer'
+import ForecastExtendedContainer from './containers/ForecastExtendedContainer'
 
 const cities = [
   "Tokyo,jp",
@@ -17,18 +17,7 @@ const cities = [
 ]
 
 class App extends Component {
-  constructor(){
-    super()
-    this.state = { city: null }
-  }
-
-  handleSelectedLocation = city => {
-    this.setState({ city })
-    console.log('handleSelectedLocation ' + city);
-  }
-
   render() {
-    const { city } = this.state
     return (
       <Flex column m={0}  >
         <Box m={0}>
@@ -50,8 +39,7 @@ class App extends Component {
             background: '#cf6044',
             borderRadius: '5px'}}>
             <div className="App">
-              <LocationList cities={cities}
-                onSelectedLocation={this.handleSelectedLocation} />
+              <LocationListContainer cities={cities} />
             </div>
           </Box>
           <Box
@@ -60,10 +48,7 @@ class App extends Component {
           m={[ 1, 2, 3 ]}
           style={{boxShadow: '10px 10px 5px 0px rgba(0,0,0,0.75)', borderRadius: '5px', height: '100vh', overflow: 'auto'}}>
             <Paper elevation={4}>
-              {!city
-                ? <h1>No se ha seleccionado ciudad</h1>
-                : <ForecastExtended city={city}></ForecastExtended>
-              }
+              <ForecastExtendedContainer />
             </Paper>
           </Box>
         </Flex>
@@ -72,4 +57,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App
